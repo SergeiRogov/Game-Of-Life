@@ -13,5 +13,17 @@
 using namespace std;
 
 bool userSaysYes(){
-    return false; //todo
+    char response;
+    bool isFirstResponse = true;
+    do{
+        if (isFirstResponse) cout << "(y/n)?";
+        else cout << "Response with either y or n:";
+        isFirstResponse = false;
+
+        do {
+            cin >> response;
+        } while (response=='\n' || response==' ' || response=='\t');
+        
+    } while (response!='y' && response!='Y' && response!='n' && response!='N');
+    return (response=='y' || response=='Y'); 
 }

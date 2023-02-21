@@ -36,6 +36,3 @@ return 0;
 // To run
 // g++ Main.cpp Life.cpp utils.cpp
 // ./a.out
-
-// First commit - initial skeleton of the program. 
-// Misses 

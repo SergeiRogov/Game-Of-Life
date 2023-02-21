@@ -20,10 +20,13 @@ void Life::initialize(){
     
     cout << "Enter coordinates of living cells and finish with -1 -1:\n";
     do{
-        cin >> row >> col;
+        cout << "\nx = ";
+        cin >> row;
+        cout << "y = ";
+        cin >> col;
         if (row==-1 && col==-1) cout << "Finished!\n";
-        if (row < 0 || row >= MAXROW) cout << "Row out of range!\n";
-        if (col < 0 || col >= MAXCOL) cout << "Column out of range!\n";
+        else if (row < 0 || row >= MAXROW) cout << "Row out of range!\n";
+        else if (col < 0 || col >= MAXCOL) cout << "Column out of range!\n";
         else grid[row][col] = alive;
     } while(row!=-1 || col!=-1); //might be "&&" as well
 }
