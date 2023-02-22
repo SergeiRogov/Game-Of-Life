@@ -11,8 +11,8 @@
 #define LIFE_H
 
 // Global constants
-const int MAXROW = 10;
-const int MAXCOL = 10;
+const int MAXROW = 60;
+const int MAXCOL = 60;
 
 enum status {dead, alive};
 

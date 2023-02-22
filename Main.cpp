@@ -21,7 +21,6 @@ using namespace std;
  * @return Returns <code>0</code> on success, any other value otherwise.
  */
 int main(){
-    cout << "START!\n";
     Life configuration;
     configuration.initialize();
     configuration.print();

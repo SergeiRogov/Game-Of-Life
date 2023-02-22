@@ -16,7 +16,7 @@ bool userSaysYes(){
     char response;
     bool isFirstResponse = true;
     do{
-        if (isFirstResponse) cout << "(y/n)?";
+        if (isFirstResponse) cout << "(y/n)? ";
         else cout << "Response with either y or n:";
         isFirstResponse = false;
 
