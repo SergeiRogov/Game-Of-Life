@@ -43,10 +43,43 @@ void Life::print() const{
 }
 
 void Life::update(){
-    int row, col;
+    int row, col, neighbors;
+    for(row=0; row<MAXROW; row++){
+        for(col=0; col<MAXCOL; col++){
+            neighbors = neighborCount(row, col);
+            if (grid[row][col]==alive){
+                if (neighbors==2 || neighbors==3) nextGrid[row][col] = alive;
+                else nextGrid[row][col] = dead;
+            } else {
+                if (neighbors==3) nextGrid[row][col] = alive;
+                else nextGrid[row][col] = dead;
+            }
+        }
+    }
+    for(row=0; row<MAXROW; row++){
+        for(col=0; col<MAXCOL; col++){
+            grid[row][col]=nextGrid[row][col];
+        }
+    }
 }
 
-int Life::neighborCount (int, int) const{
-    int row, col;
-    return 1;
+int Life::neighborCount (int row, int col) const{
+    int count = 0;
+    count += explore(row-1, col-1);
+    count += explore(row, col-1);
+    count += explore(row+1, col-1);
+    count += explore(row+1, col);
+    count += explore(row+1, col+1);
+    count += explore(row, col+1);
+    count += explore(row-1, col+1);
+    count += explore(row-1, col);
+    return count;
+}
+
+int Life::explore (int row, int col) const{
+    bool RowIsInBounds = (row >= 0 || row < MAXROW);
+    bool ColIsInBounds = (col >= 0 || col < MAXCOL);
+    if (!RowIsInBounds || !ColIsInBounds) return 0;
+    if (grid[row][col] == alive) return 1;
+    return 0;
 }

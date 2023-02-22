@@ -23,7 +23,9 @@ public:
     void update();
 private:
     int neighborCount (int, int) const;
+    int explore (int, int) const;
     status grid[MAXROW][MAXCOL];
+    status nextGrid[MAXROW][MAXCOL];
 };
 
 #endif // end LIFE_H

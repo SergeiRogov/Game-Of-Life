@@ -23,7 +23,7 @@ bool userSaysYes(){
         do {
             cin >> response;
         } while (response=='\n' || response==' ' || response=='\t');
-        
+
     } while (response!='y' && response!='Y' && response!='n' && response!='N');
     return (response=='y' || response=='Y'); 
 }

@@ -33,6 +33,7 @@ int main(){
     }
 return 0;
 }
+
 // To run
 // g++ Main.cpp Life.cpp utils.cpp
 // ./a.out
